@@ -5,8 +5,6 @@ import Fox from "../../components/fox";
 import "./style.css";
 
 // Import das funções utilitárias e de interação com o piñata
-import { connectWallet, mintNFT } from "../../utils/interact.js";
-import { pinIMAGEtoIPFS } from "../../utils/pinata";
 
 const FormData = require("form-data");
 
@@ -15,8 +13,6 @@ const Minter = () => {
   // e informações da carteira do usuário
   const [isConnected, setConnectedStatus] = useState(false);
   const [walletAddress, setWallet] = useState("");
-  const [status, setStatus] = useState("");
-  const [error, setError] = useState(null);
   // Variáveis do Formulário
   const [releaseName, setReleaseName] = useState("");
   const [artwork, setArtwork] = useState("");
@@ -29,93 +25,18 @@ const Minter = () => {
 
   // Função que é executada assim que o código é executado (ex: quando a página
   // é aberta no navegador)
-  useEffect(async () => {
-    if (window.ethereum) {
-      // Se a Metamask está instalada no navegador
-      try {
-        const accounts = await window.ethereum.request({
-          method: "eth_accounts",
-        }); // Retornando o endereço da Metamask
-        if (accounts.length) {
-          // Metamask conectada: iremos definir o valor da carteira
-          setConnectedStatus(true);
-          setWallet(accounts[0]);
-        } else {
-          // Metamask não conectada: iremos solicitar ao usuário que conecte-se na Metamask
-          setConnectedStatus(false);
-          setStatus(
-            "Conecte sua carteira da Metamask clicando no botão no topo à direita. "
-          );
-        }
-      } catch {
-        // Caso o usuário cancele ou haja qualquer erro durante a request
-        // para a Metamask retornar a conta do usuário logado (caso verdadeiro)
-        setConnectedStatus(false);
-        setStatus(
-          "Conecte sua carteira da Metamask clicando no botão no topo à direita. " +
-            walletAddress
-        );
-      }
-    } else {
-      // Caso o usuário não tenha a Metamask instalada no navegador
-      setStatus(
-        "⚠️ Por favor, instale a Metamask no seu navegador: https://metamask.io/download.html"
-      );
-    }
-  });
+  useEffect(async () => {});
 
   // Função executada quando o usuário clica no botão "conectar carteira"
   // Essa função irá chamar outra função utilitária (connectWallet) e irá
   // definir o status e/ou endereço da carteira retornado (caso tudo ocorra bem)
-  const connectWalletPressed = async () => {
-    // Obtendo a resposta da função utilitária
-    const walletResponse = await connectWallet();
-    setConnectedStatus(walletResponse.connectedStatus); // Define o valor do status de acordo com a respostada função connectWallet
-    setStatus(walletResponse.status);
-
-    if (isConnected) {
-      // Caso o usuário tenha conseguido se conectar, definimos a carteira
-      setWallet(walletResponse.address);
-    }
-  };
+  const connectWalletPressed = async () => {};
 
   // Função para quando o usuário for realizar o Mint
-  const onMintPressed = async () => {
-    // Passando os parametros para a função utilitária mintNFT
-    // e definindo o status da resposta
-    const { status } = await mintNFT(artist, artwork, releaseName);
-    setStatus(status);
-  };
+  const onMintPressed = async () => {};
 
   // Função executada quando o usuário seleciona uma imagem no formulários
-  const artworkHandleChange = async (e) => {
-    // Identificando uma imagem (quando selecionada) nessa var
-    let selectedFile = e.target.files[0];
-
-    if (selectedFile) {
-      // Caso o usuário selecione a imagem, iremos validar se o tipo
-      // dessa imagem corresponde aos tipos de arquivos aceitos (PNG, GIF e JPG)
-      if (types.includes(selectedFile.type)) {
-        // Caso o tipo da imagem selecionada estiver no array de tipos aceitos
-        data.set("file", selectedFile); // Definindo a imagem na variavel que contém todos os dados do form
-
-        // Convertendo a imagem para IPFS
-        const pinataUploadResponse = await pinIMAGEtoIPFS(data);
-
-        // Caso o upload da imagem pro pinata dê certo
-        if (pinataUploadResponse.success) {
-          // Definindo o Artwork para o da resposta do pinata
-          setArtwork(pinataUploadResponse.pinataUrl);
-          setError(null);
-        } else {
-          setError(error);
-        }
-      } else {
-        // Caso a imagem não corresponda aos tipos aceitos, retornamos um erro
-        setError("Por favor, selecione um arquivo PNG, GIF ou JPG");
-      }
-    }
-  };
+  const artworkHandleChange = async (e) => {};
 
   return (
     <div id="minter">
@@ -141,7 +62,7 @@ const Minter = () => {
           {/* METAMASK FACE INTERATIVA */}
           <div className="col-md-2 col-sm-12 text-center mt-3 mt-md-0">
             <div id="metamask-face">
-              <Fox followMouse width={100} height={100} />
+              {/* <Fox followMouse width={100} height={100} /> */}
             </div>
           </div>
 
@@ -169,7 +90,8 @@ const Minter = () => {
 
         {/* ALERTAS */}
         {/* Alertas de Status */}
-        {status ? (
+
+        {/* {status ? (
           <div className="row mb-4 mt-5 mt-md-4">
             <div className="col-12">
               <div className="alert alert-secondary" role="alert">
@@ -177,10 +99,20 @@ const Minter = () => {
               </div>
             </div>
           </div>
-        ) : null}
+        ) : null} */}
+        <div className="row mb-4 mt-5 mt-md-4">
+          <div className="col-12">
+            <div className="alert alert-secondary" role="alert">
+              <span className="status">
+                Olá! Eu sou um exemplo de um alerta.
+              </span>
+            </div>
+          </div>
+        </div>
 
         {/* Alertas de Erros */}
-        {error ? (
+
+        {/* {error ? (
           <div className="row mb-4 mt-5 mt-md-4">
             <div className="col-12">
               <div className="alert alert-danger" role="alert">
@@ -188,7 +120,14 @@ const Minter = () => {
               </div>
             </div>
           </div>
-        ) : null}
+        ) : null} */}
+        <div className="row mb-4 mt-5 mt-md-4">
+          <div className="col-12">
+            <div className="alert alert-danger" role="alert">
+              <span className="status">Olá! Eu sou um exemplo de um erro</span>
+            </div>
+          </div>
+        </div>
 
         {/* CARD PRINCIPAL E FORMULÁRIO*/}
         <div className="row">
