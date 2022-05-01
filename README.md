@@ -1,13 +1,15 @@
 # NFT Minter 
+<p align="center">
 <img src="https://metadevs.com.br/static/media/logo-w-text.6bc5968eaf1e5ddc1c26.png" alt="Metadevs www.metadevs.com.br" style="width:400px;"/>
-
-Acesse a comunidade Metadevs: https://wwww.metadevs.com.br/
-
-Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, Piñata, SmartContracts com Solidity & OpenZeppelin além do Truffle & Ganache para realizar os testes em uma Blockchain Ethereum de teste.
+</p>
 
 <p align="center">
   <img src="https://gateway.pinata.cloud/ipfs/QmTc7pUi9Barfkqbx9zgcgGkaqSJQnpsDG4ZQKrTFyqQt8" alt="Metadevs www.metadevs.com.br" style="width:750px;"/>
 </p>
+
+Acesse a comunidade Metadevs: https://wwww.metadevs.com.br/
+
+Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, Piñata, SmartContracts com Solidity & OpenZeppelin além do Truffle & Ganache para realizar os testes em uma Blockchain Ethereum de teste.
 
 ## ATENÇÃO: `Código Inicial do Curso`vs Código completo 
 
@@ -37,7 +39,7 @@ You may also see any lint errors in the console.
 
 Esse arquivo deve conter as seguintes inforações advindas do Piñata & Alchemy
 
----
+```
 REACT_APP_PINATA_KEY = "xxxxxxx"
 
 REACT_APP_PINATA_SECRET = "xxxxxxxxxxxxxxx"
@@ -45,7 +47,7 @@ REACT_APP_PINATA_SECRET = "xxxxxxxxxxxxxxx"
 REACT_APP_BEARER_KEY = "xxxxxxxxxx"
 
 REACT_APP_ALCHEMY_KEY = "xxxxxxxxxx"
----
+```
 
 #
 ### `truffle migrate`
