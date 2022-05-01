@@ -94,8 +94,7 @@ const Minter = () => {
 
         {/* ALERTAS */}
         {/* Alertas de Status */}
-
-        {/* {status ? (
+        {status ? (
           <div className="row mb-4 mt-5 mt-md-4">
             <div className="col-12">
               <div className="alert alert-secondary" role="alert">
@@ -103,19 +102,9 @@ const Minter = () => {
               </div>
             </div>
           </div>
-        ) : null} */}
-        <div className="row mb-4 mt-5 mt-md-4">
-          <div className="col-12">
-            <div className="alert alert-secondary" role="alert">
-              <span className="status">
-                Olá! Eu sou um exemplo de um alerta.
-              </span>
-            </div>
-          </div>
-        </div>
+        ) : null}
 
         {/* Alertas de Erros */}
-
         {error ? (
           <div className="row mb-4 mt-5 mt-md-4">
             <div className="col-12">
