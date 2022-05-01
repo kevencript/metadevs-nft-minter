@@ -25,16 +25,7 @@ Dentro do diretório principal, você pode executar:
 
 Instala todas as dependências do projeto dentro da pasta "node_modules"
 
-#
-### `npm start`
 
-Inicia a aplicação no modo de desenvolvimento.\
-Acesse [http://localhost:3000](http://localhost:3000) para visualizar a página no seu browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-#
 ### `Criar um aquivo .env para as variáveis de ambiente`
 
 Esse arquivo deve conter as seguintes inforações advindas do Piñata & Alchemy
@@ -58,6 +49,14 @@ It correctly bundles React in production mode and optimizes the build for the be
 Lembrando que para a aplicação rodar corretamente, é necessário ter uma Blockchain local rodando com Ganache
 
 Tenha mais informações sobre o [Ganache](https://trufflesuite.com/ganache/).
+
+#
+### `npm start`
+
+Inicia a aplicação no modo de desenvolvimento.\
+Acesse [http://localhost:3000](http://localhost:3000) para visualizar a página no seu browser.
+
+#
 
 ### `truffle console`
 
