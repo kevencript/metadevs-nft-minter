@@ -2,6 +2,8 @@
 
 Acesse a comunidade Metadevs: https://wwww.metadevs.com.br/
 
+Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, SmartContracts co Solidity & OpenZeppelin além do Truffle & Ganache para realizar os testes em uma Blockchain Ethereum de teste.
+
 ## Como iniciar o projeto
 
 Dentro do diretório principal, você pode executar:
