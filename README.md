@@ -1,4 +1,6 @@
 # NFT Minter 
+<img src="https://metadevs.com.br/static/media/logo-w-text.6bc5968eaf1e5ddc1c26.png" alt="Metadevs www.metadevs.com.br" style="width:400px;"/>
+
 
 Acesse a comunidade Metadevs: https://wwww.metadevs.com.br/
 
