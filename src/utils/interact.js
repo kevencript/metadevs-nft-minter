@@ -62,4 +62,58 @@ export const connectWallet = async () => {
 };
 
 // Função para realizar o Mint de um NFTT a partir dos parâmetros
-export const mintNFT = async (artist, artwork, name) => {};
+export const mintNFT = async (artist, artwork, name) => {
+  // Construindo os Metadados
+  const metadata = new Object();
+  metadata.image = artwork; // Arte do Projeto (link do IPFS da imagem)
+  metadata.name = name; // Nome do Lançamento
+  metadata.artist = artist; // Nome do Artista
+
+  // Gerando o IPFS a partir de um objeto JSON
+  const pinataResponse = await pinJSONToIPFS(metadata);
+
+  if (!pinataResponse.success) {
+    // Caso haja algum erro no processo, iremos retornar um ststus
+    return {
+      success: false,
+      status: "😢 Algo deu errado ao realizar o upload do tokenURI.",
+    };
+  }
+
+  // Armazenando o tokenURI (url do ipfs do objeto JSON que contém os metadados do NFT)
+  const tokenURI = pinataResponse.pinataUrl;
+
+  // Iniciando contrato e retornando qual o Endereço do Contrato
+  const { contractAddress } = await loadContract();
+
+  // Realizando transação no Ethereum e retornando os parâmetros da transação
+  // obs: iremos utiliza-lo no passo seguinte para retornar a txHash
+  const transactionParameters = {
+    to: contractAddress, // Qual o endereço do contrato no qual está recebendo a interação
+    from: window.ethereum.selectedAddress, // Quem está interagindo com o contrato
+    data: window.contract.methods
+      .mintNFT(window.ethereum.selectedAddress, tokenURI) // Chamando a função do nosso SmartContract
+      .encodeABI(),
+  };
+
+  // Retornando a transação realizada via Metamask
+  try {
+    // Solicitando qual o hash (txHash) da transação que foi executada
+    // no passo anterior
+    const txHash = await window.ethereum.request({
+      method: "eth_sendTransaction",
+      params: [transactionParameters],
+    });
+    return {
+      // Caso ocorra tudo bem retornamos o hash da transação
+      success: true,
+      status: "✅ NFT Mintado com sucesso! txHash: " + txHash,
+    };
+  } catch (error) {
+    // Caso algo dê errado
+    return {
+      success: false,
+      status: "😥 Algo deu errado: " + error.message,
+    };
+  }
+};
