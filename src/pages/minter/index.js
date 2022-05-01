@@ -83,7 +83,34 @@ const Minter = () => {
   const onMintPressed = async () => {};
 
   // Função executada quando o usuário seleciona uma imagem no formulários
-  const artworkHandleChange = async (e) => {};
+  const artworkHandleChange = async (e) => {
+    // Identificando uma imagem (quando selecionada) nessa var
+    let selectedFile = e.target.files[0];
+
+    if (selectedFile) {
+      // Caso o usuário selecione a imagem, iremos validar se o tipo
+      // dessa imagem corresponde aos tipos de arquivos aceitos (PNG, GIF e JPG)
+      if (types.includes(selectedFile.type)) {
+        // Caso o tipo da imagem selecionada estiver no array de tipos aceitos
+        data.set("file", selectedFile); // Definindo a imagem na variavel que contém todos os dados do form
+
+        // Convertendo a imagem para IPFS
+        const pinataUploadResponse = await pinIMAGEtoIPFS(data);
+
+        // Caso o upload da imagem pro pinata dê certo
+        if (pinataUploadResponse.success) {
+          // Definindo o Artwork para o da resposta do pinata
+          setArtwork(pinataUploadResponse.pinataUrl);
+          setError(null);
+        } else {
+          setError(error);
+        }
+      } else {
+        // Caso a imagem não corresponda aos tipos aceitos, retornamos um erro
+        setError("Por favor, selecione um arquivo PNG, GIF ou JPG");
+      }
+    }
+  };
 
   return (
     <div id="minter">
