@@ -67,7 +67,17 @@ const Minter = () => {
   // Função executada quando o usuário clica no botão "conectar carteira"
   // Essa função irá chamar outra função utilitária (connectWallet) e irá
   // definir o status e/ou endereço da carteira retornado (caso tudo ocorra bem)
-  const connectWalletPressed = async () => {};
+  const connectWalletPressed = async () => {
+    // Obtendo a resposta da função utilitária
+    const walletResponse = await connectWallet();
+    setConnectedStatus(walletResponse.connectedStatus); // Define o valor do status de acordo com a respostada função connectWallet
+    setStatus(walletResponse.status);
+
+    if (isConnected) {
+      // Caso o usuário tenha conseguido se conectar, definimos a carteira
+      setWallet(walletResponse.address);
+    }
+  };
 
   // Função para quando o usuário for realizar o Mint
   const onMintPressed = async () => {};
