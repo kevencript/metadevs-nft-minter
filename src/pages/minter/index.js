@@ -29,7 +29,40 @@ const Minter = () => {
 
   // Função que é executada assim que o código é executado (ex: quando a página
   // é aberta no navegador)
-  useEffect(async () => {});
+  useEffect(async () => {
+    if (window.ethereum) {
+      // Se a Metamask está instalada no navegador
+      try {
+        const accounts = await window.ethereum.request({
+          method: "eth_accounts",
+        }); // Retornando o endereço da Metamask
+        if (accounts.length) {
+          // Metamask conectada: iremos definir o valor da carteira
+          setConnectedStatus(true);
+          setWallet(accounts[0]);
+        } else {
+          // Metamask não conectada: iremos solicitar ao usuário que conecte-se na Metamask
+          setConnectedStatus(false);
+          setStatus(
+            "Conecte sua carteira da Metamask clicando no botão no topo à direita. "
+          );
+        }
+      } catch {
+        // Caso o usuário cancele ou haja qualquer erro durante a request
+        // para a Metamask retornar a conta do usuário logado (caso verdadeiro)
+        setConnectedStatus(false);
+        setStatus(
+          "Conecte sua carteira da Metamask clicando no botão no topo à direita. " +
+            walletAddress
+        );
+      }
+    } else {
+      // Caso o usuário não tenha a Metamask instalada no navegador
+      setStatus(
+        "⚠️ Por favor, instale a Metamask no seu navegador: https://metamask.io/download.html"
+      );
+    }
+  });
 
   // Função executada quando o usuário clica no botão "conectar carteira"
   // Essa função irá chamar outra função utilitária (connectWallet) e irá
