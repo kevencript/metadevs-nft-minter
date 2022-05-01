@@ -1,0 +1,13 @@
+#footer .page-footer {
+  background-color: #141414;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+#footer .page-footer {
+  margin-top: 80px;
+}
+
+#footer .txt {
+  padding-top: 100px;
+}

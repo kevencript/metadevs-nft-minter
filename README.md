@@ -1,2 +1,2 @@
-# metadevs-nft-minter
-Metadevs NFT Minter - SmartContracts com Solidty &amp; OpenZeppelin, integração Web3 com React em uma Blockchain de test co Truffle &amp; Ganache
+# metadevs-minter
+"Minter" app do curso da Metadevs; Web3, Pinata, Firebase

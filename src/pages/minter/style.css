@@ -1,0 +1,95 @@
+body {
+  background-image: linear-gradient(to right, #f4f7f9, #f4f7f9);
+}
+
+#minter .title {
+  color: #303030;
+  font-size: 220%;
+}
+
+#minter .alert-secondary {
+  height: 80%;
+}
+
+#minter .col-12 {
+  padding: 0;
+}
+
+#minter .subtitle {
+  width: 350px;
+  font-size: 100%;
+}
+
+#minter .connect-wallet-div {
+  font-size: 100%;
+}
+
+#minter .wallet-button {
+  background-color: #7b5eea;
+  padding: 13px;
+  border-radius: 13px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.5s;
+  margin-bottom: 20px;
+}
+
+#minter .image-preview {
+  max-width: 200px;
+  box-shadow: 0px 0px 20px -9px rgba(0, 0, 0, 0.7);
+  max-height: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px
+  
+}
+
+#minter .wallet-button:hover {
+  box-shadow: 0px 0px 41px -21px rgba(0, 0, 0, 0.65);
+  transition: all 0.5s;
+}
+
+#minter .wallet-button-connected {
+  background-color: #7b5eea;
+  padding: 13px;
+  border-radius: 13px;
+  color: white;
+}
+
+#minter .form-card {
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 30px;
+  padding-right: 20;
+  border-radius: 13px;
+  box-shadow: 0px 0px 20px -9px rgba(0, 0, 0, 0.2);
+  margin-bottom: 8%
+}
+
+#minter .card-title {
+  font-size: 90%;
+}
+
+#minter .form-title {
+  font-size: 140%;
+}
+
+#minter .form-subtitle {
+  font-size: 85%;
+}
+
+#minter .form-url-subtitle {
+  font-size: 70%;
+}
+
+#minter .upload-card {
+  background-color: rgb(245, 245, 245);
+  padding: 5px 9px;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#minter .btn-sm {
+  width: 100%;
+  background-color: #7b5eea;
+  color: white;
+}
