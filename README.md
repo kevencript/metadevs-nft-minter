@@ -3,7 +3,7 @@
 
 Acesse a comunidade Metadevs: https://wwww.metadevs.com.br/
 
-Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, SmartContracts co Solidity & OpenZeppelin além do Truffle & Ganache para realizar os testes em uma Blockchain Ethereum de teste.
+Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, Piñata, SmartContracts com Solidity & OpenZeppelin além do Truffle & Ganache para realizar os testes em uma Blockchain Ethereum de teste.
 
 <p align="center">
   <img src="https://gateway.pinata.cloud/ipfs/QmTc7pUi9Barfkqbx9zgcgGkaqSJQnpsDG4ZQKrTFyqQt8" alt="Metadevs www.metadevs.com.br" style="width:750px;"/>
