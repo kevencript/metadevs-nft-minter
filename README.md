@@ -9,6 +9,12 @@ Esse projeto é uma aplicação web utilizando ReactJs, Alchemy Web3.0, Piñata,
   <img src="https://gateway.pinata.cloud/ipfs/QmTc7pUi9Barfkqbx9zgcgGkaqSJQnpsDG4ZQKrTFyqQt8" alt="Metadevs www.metadevs.com.br" style="width:750px;"/>
 </p>
 
+## ATENÇÃO: `Código Inicial do Curso`vs Código completo 
+
+Se você comprou o curso e vai iniciar o projeto desde o início, você deve fazer um clone da branch `codigo-inicial`. Lá estará presente toda a parte estrutural, mas as funções/contratos ainda não estão implementados, e você pode ir construindo de acordo com o curso.
+
+A versão completa do código encontra-se na branch `main`
+
 ## Como iniciar o projeto
 
 Dentro do diretório principal, você pode executar:
