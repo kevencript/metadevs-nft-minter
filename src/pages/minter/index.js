@@ -80,7 +80,12 @@ const Minter = () => {
   };
 
   // Função para quando o usuário for realizar o Mint
-  const onMintPressed = async () => {};
+  const onMintPressed = async () => {
+    // Passando os parametros para a função utilitária mintNFT
+    // e definindo o status da resposta
+    const { status } = await mintNFT(artist, artwork, releaseName);
+    setStatus(status);
+  };
 
   // Função executada quando o usuário seleciona uma imagem no formulários
   const artworkHandleChange = async (e) => {
