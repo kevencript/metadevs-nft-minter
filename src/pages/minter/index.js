@@ -141,7 +141,7 @@ const Minter = () => {
           {/* METAMASK FACE INTERATIVA */}
           <div className="col-md-2 col-sm-12 text-center mt-3 mt-md-0">
             <div id="metamask-face">
-              {/* <Fox followMouse width={100} height={100} /> */}
+              <Fox followMouse width={100} height={100} />
             </div>
           </div>
 
