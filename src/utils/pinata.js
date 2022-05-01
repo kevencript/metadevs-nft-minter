@@ -34,13 +34,13 @@ export const pinJSONToIPFS = async (JSONBody) => {
 };
 
 // Função para transformar a imagem da Arte do Projeto em IPFS
-export const pinIMAGEtoIPFS = async (data) => {
+export const pinIMAGEtoIPFS = async (JSONBody) => {
   const url = `https://api.pinata.cloud/pinning/pinFileToIPFS`;
   // Realizando uma requisição para a API do piñata para
   // transformar uma imagem em um IPFS
   return (
     axios
-      .post(url, data, {
+      .post(url, JSONBody, {
         maxBodyLength: "Infinity",
         headers: {
           // Obtendo variáveis de ambiente da nossa conta do piñata
