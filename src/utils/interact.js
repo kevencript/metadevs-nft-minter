@@ -7,7 +7,28 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(alchemyKey);
 
 // Função para iniciar o contrato de acordo com a ABI
-export const loadContract = async () => {};
+export const loadContract = async () => {
+  // Retornando os dados da rede pelo ID
+  const networkData = MetadevsContract.networks["5777"]; // Para um servidor ganache
+
+  const contractABI = MetadevsContract.abi; // Definindo dados da ABI
+  const contractAddress = networkData.address; // Definindo endereço do contrato a partir das configs de rede da ABI
+
+  if (contractABI && contractAddress) {
+    // Caso tenhamos a ABI e o Endereço do contrato, instanciamos o contrato no navegador
+    window.contract = new web3.eth.Contract(contractABI, contractAddress);
+
+    return {
+      success: true,
+      contractAddress, // Retornando o endereço do contrato
+    };
+  } else {
+    // Caso não tenhos as variáveis de ABI e o Endereço do contrato
+    return {
+      success: false,
+    };
+  }
+};
 
 // Função para abrir a opção de conectar carteira na Metamask
 export const connectWallet = async () => {
