@@ -14,7 +14,7 @@ const header = () => {
               window.open("https://metadevs.com.br", "_self");
             }}
           >
-            Metadevs Brasil 🇧🇷
+            <span>Metadevs Brasil 🇧🇷</span>
           </a>
           <button
             className="navbar-toggler"
@@ -30,15 +30,19 @@ const header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto">
               <li className="nav-item">
-                <a className="nav-link" href="/"></a>
+                <a className="nav-link" href="#">
+                  <span></span>
+                </a>
               </li>
 
               <li className="nav-item active">
-                <a className="nav-link" href="/"></a>
+                <a className="nav-link" href="#">
+                  <span></span>
+                </a>
               </li>
 
               <li className="nav-item">
-                <a className="nav-link" href="/"></a>
+                <a className="nav-link" href="#"></a>
               </li>
             </ul>
             <span className="navbar-text float-right">
@@ -54,7 +58,7 @@ const header = () => {
                       );
                     }}
                   >
-                    Youtube
+                    <span>Youtubefhrf</span>
                   </a>
                 </li>
                 <li className="nav-item">

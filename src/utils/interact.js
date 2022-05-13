@@ -64,7 +64,7 @@ export const connectWallet = async () => {
 // Função para realizar o Mint de um NFTT a partir dos parâmetros
 export const mintNFT = async (artist, artwork, name) => {
   // Construindo os Metadados
-  const metadata = new Object();
+  const metadata = {};
   metadata.image = artwork; // Arte do Projeto (link do IPFS da imagem)
   metadata.name = name; // Nome do Lançamento
   metadata.artist = artist; // Nome do Artista

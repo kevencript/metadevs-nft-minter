@@ -62,7 +62,7 @@ const Minter = () => {
         "⚠️ Por favor, instale a Metamask no seu navegador: https://metamask.io/download.html"
       );
     }
-  });
+  }, []);
 
   // Função executada quando o usuário clica no botão "conectar carteira"
   // Essa função irá chamar outra função utilitária (connectWallet) e irá

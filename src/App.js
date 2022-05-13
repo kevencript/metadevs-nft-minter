@@ -1,6 +1,6 @@
 import "./App.css";
 import Minter from "./pages/minter";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 function App() {
   return (
