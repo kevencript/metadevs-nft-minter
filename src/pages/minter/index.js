@@ -25,7 +25,7 @@ const Minter = () => {
 
   // Função que é executada assim que o código é executado (ex: quando a página
   // é aberta no navegador)
-  useEffect(async () => {});
+  useEffect(async () => {}, []);
 
   // Função executada quando o usuário clica no botão "conectar carteira"
   // Essa função irá chamar outra função utilitária (connectWallet) e irá
